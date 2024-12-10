@@ -13,13 +13,17 @@ $connInfo = array(
     "CharacterSet" => "UTF-8" // Opsional untuk encoding karakter
 );
 
-// Koneksi ke SQL Server
-$conn = sqlsrv_connect($host, $connInfo);
+try {
+    // DSN for connecting to SQL Server
+    $dsn = "sqlsrv:Server=$host;Database=$database";
 
-if ($conn) {
+    // Create PDO instance
+    $conn = new PDO($dsn, $user, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
     echo "Connection successful.<br/>";
-} else {
-    echo "Connection failed.";
-    die(print_r(sqlsrv_errors(), true));
+} catch (PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
+    die();
 }
 ?>
