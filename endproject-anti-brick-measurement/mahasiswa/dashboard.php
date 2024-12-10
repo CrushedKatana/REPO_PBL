@@ -57,8 +57,12 @@ document.getElementById('profile-photo').addEventListener('change', function(e) 
                 </li>
             </ul>
             <div class="d-flex align-items-center">
-                <span class="me-2">Placeholder</span>
-                <span>Placeholder</span>
+                <!-- Display the user's name -->
+                <span class="me-2"><?php echo $user['nama_lengkap']; ?></span>
+                
+                <!-- Display the user's NIM -->
+                <span><?php echo $user['nim']; ?></span>
+    
                 <li class="nav-link dropdown">
                 <a href="#" role="button" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" class="">
                     <i class="fas fa-user-circle fa-2x"></i>
@@ -154,7 +158,8 @@ document.getElementById('profile-photo').addEventListener('change', function(e) 
     <!-- Tab Content -->
     <div class="tab-content flex-grow-1">
     <div class="tab-pane fade show active p-3 border rounded bg-light" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-    <h4 class="mb-3">Hai, Agus Kopling!</h4>
+    <h4 class="mb-3">Hai, <?php echo $user['nama_lengkap']; ?>!</h4>
+
     
     <!-- Top Stats Cards -->
     <div class="d-flex gap-3 mb-4">
@@ -220,45 +225,48 @@ document.getElementById('profile-photo').addEventListener('change', function(e) 
                 <img src="profile-photo.jpg" class="rounded-3 mb-3" style="width: 150px; height: 200px; object-fit: cover;">
             </div>
             
-            <div class="row mb-3">
-                <div class="col-4">NIM</div>
-                <div class="col-8">234777203412</div>
-            </div>
-            
-            <div class="row mb-3">
-                <div class="col-4">Nama Lengkap</div>
-                <div class="col-8">Agus Kopling</div>
-            </div>
-            
-            <div class="row mb-3">
-                <div class="col-4">Jenis Kelamin</div>
-                <div class="col-8">Laki-laki</div>
-            </div>
-            
-            <div class="row mb-3">
-                <div class="col-4">No. Handphone</div>
-                <div class="col-8">082145678900</div>
-            </div>
-            
-            <div class="row mb-3">
-                <div class="col-4">No. Handphone Orang Tua / Wali</div>
-                <div class="col-8">082145678900</div>
-            </div>
-            
-            <div class="row mb-3">
-                <div class="col-4">Jurusan</div>
-                <div class="col-8">Teknologi Informasi</div>
-            </div>
-            
-            <div class="row mb-3">
-                <div class="col-4">Prodi</div>
-                <div class="col-8">D-IV Teknik Informatika</div>
-            </div>
-            
-            <div class="row mb-3">
-                <div class="col-4">Kelas</div>
-                <div class="col-8">2</div>
-            </div>
+            <div class="row mb-3"> 
+            <div class="col-4">NIM</div>
+            <div class="col-8"><?php echo $user['nim']; ?></div>
+        </div>
+        
+        <div class="row mb-3">
+            <div class="col-4">Nama Lengkap</div>
+            <div class="col-8"><?php echo $user['nama_lengkap']; ?></div>
+        </div>
+        
+        <div class="row mb-3">
+            <div class="col-4">Jenis Kelamin</div>
+            <div class="col-8"><?php echo $user['jenis_kelamin']; ?></div>
+        </div>
+        
+        <div class="row mb-3">
+            <div class="col-4">No. Handphone</div>
+            <div class="col-8"><?php echo $user['no_hp']; ?></div>
+        </div>
+        
+        <div class="row mb-3">
+            <div class="col-4">No. Handphone Orang Tua / Wali</div>
+            <div class="col-8"><?php echo $user['no_hp_ortu']; ?></div>
+        </div>
+        
+        <div class="row mb-3">
+            <div class="col-4">Jurusan</div>
+            <div class="col-8"><?php echo $user['jurusan']; ?></div>
+        </div>
+        
+        <div class="row mb-3">
+            <div class="col-4">Prodi</div>
+            <div class="col-8"><?php echo $user['prodi']; ?></div>
+        </div>
+        
+        <div class="row mb-3">
+            <div class="col-4">Kelas</div>
+            <div class="col-8"><?php echo $user['kelas']; ?></div>
+        </div>
+    </div>
+</div>
+
             
             <div class="text-end">
                 <button class="btn btn-primary" onclick="document.querySelector('#v-pills-edit-profile-tab').click()">Edit</button>
