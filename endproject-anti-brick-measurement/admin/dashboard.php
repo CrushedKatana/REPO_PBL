@@ -98,8 +98,13 @@ document.querySelectorAll('.btn-warning').forEach(button => {
                 </li>
             </ul>
             <div class="d-flex align-items-center">
-                <span class="me-2">Placeholder</span>
-                <span>Placeholder</span>
+            <div class="d-flex align-items-center">
+                <!-- Display the user's name -->
+                <span class="me-2"><?php echo $user['nama_lengkap']; ?></span>
+                
+                <!-- Display the user's NIM -->
+                <span><?php echo $user['id']; ?></span>
+    
                 <li class="nav-link dropdown">
                 <a href="#" role="button" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" class="">
                     <i class="fas fa-user-circle fa-2x"></i>
@@ -112,7 +117,6 @@ document.querySelectorAll('.btn-warning').forEach(button => {
         </div>
     </div>
 </nav>
-
 
 <!-- Modal Body -->
 <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
@@ -195,8 +199,7 @@ document.querySelectorAll('.btn-warning').forEach(button => {
     <!-- Tab Content -->
     <div class="tab-content flex-grow-1">
     <div class="tab-pane fade show active p-3 border rounded bg-light" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-    <h4 class="mb-3">Hi, Faiz rizky</h4>
-    <p>Welcome in Si Disiplin</p>
+        <h4 class="mb-3">Hai, <?php echo $user['nama_lengkap']; ?>!</h4>
     
     <!-- Stats Cards Container -->
     <div class="d-flex justify-content-center gap-4 mb-4 p-4" style="background-color: #15295E; border-radius: 10px;">
@@ -227,52 +230,39 @@ document.querySelectorAll('.btn-warning').forEach(button => {
                 <img src="profile-photo.jpg" class="rounded-3 mb-3" style="width: 150px; height: 200px; object-fit: cover;">
             </div>
             
-            <div class="row mb-3">
-                <div class="col-4">NIM</div>
-                <div class="col-8">234777203412</div>
-            </div>
-            
-            <div class="row mb-3">
-                <div class="col-4">Nama Lengkap</div>
-                <div class="col-8">Agus Kopling</div>
-            </div>
-            
-            <div class="row mb-3">
-                <div class="col-4">Jenis Kelamin</div>
-                <div class="col-8">Laki-laki</div>
-            </div>
-            
-            <div class="row mb-3">
-                <div class="col-4">No. Handphone</div>
-                <div class="col-8">082145678900</div>
-            </div>
-            
-            <div class="row mb-3">
-                <div class="col-4">No. Handphone Orang Tua / Wali</div>
-                <div class="col-8">082145678900</div>
-            </div>
-            
-            <div class="row mb-3">
-                <div class="col-4">Jurusan</div>
-                <div class="col-8">Teknologi Informasi</div>
-            </div>
-            
-            <div class="row mb-3">
-                <div class="col-4">Prodi</div>
-                <div class="col-8">D-IV Teknik Informatika</div>
-            </div>
-            
-            <div class="row mb-3">
-                <div class="col-4">Kelas</div>
-                <div class="col-8">2</div>
-            </div>
-            
-            <div class="text-end">
-                <button class="btn btn-primary" onclick="document.querySelector('#v-pills-edit-profile-tab').click()">Edit</button>
-            </div>
+            <div class="row mb-3"> 
+            <div class="col-4">NID</div>
+            <div class="col-8"><?php echo $user['id']; ?></div>
         </div>
+        
+        <div class="row mb-3">
+            <div class="col-4">Nama Lengkap</div>
+            <div class="col-8"><?php echo $user['nama_lengkap']; ?></div>
+        </div>
+        
+        <div class="row mb-3">
+            <div class="col-4">Jenis Kelamin</div>
+            <div class="col-8"><?php echo $user['jenis_kelamin']; ?></div>
+        </div>
+        
+        <div class="row mb-3">
+            <div class="col-4">No. Handphone</div>
+            <div class="col-8"><?php echo $user['no_hp']; ?></div>
+        </div>
+        
+        <div class="row mb-3">
+            <div class="col-4">Jurusan</div>
+            <div class="col-8"><?php echo $user['jurusan']; ?></div>
+        </div>
+        
+        <div class="row mb-3">
+            <div class="col-4">Prodi</div>
+            <div class="col-8"><?php echo $user['prodi']; ?></div>
+        </div>
+        
     </div>
 </div>
+
 <div class="tab-pane fade p-3 border rounded bg-light" id="v-pills-edit-profile" role="tabpanel" aria-labelledby="v-pills-edit-profile-tab">
     <div class="card">
         <div class="card-body">
